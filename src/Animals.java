@@ -19,7 +19,7 @@ public class Animals implements Serializable {
 		}
 	}
 
-	// ¸Ä±ä×°±¸
+	// æ”¹å˜è£…å¤‡
 	public Equipment changeEquip(Equipment equip) {
 		Equipment oldequip = new Blank();
 		if (equip instanceof Teeth) {
@@ -44,7 +44,7 @@ public class Animals implements Serializable {
 		return oldequip;
 	}
 
-	// ÄÍ¾ÃÏûºÄ
+	// è€ä¹…æ¶ˆè€—
 	public void enduranceDown() {
 		for (int index = 0; index < equips.length; index++) {
 			if (equips[index] != null) {
@@ -58,10 +58,10 @@ public class Animals implements Serializable {
 		}
 	}
 
-	// ¹¥»÷
+	// æ”»å‡»
 	public String attack(Humen[] human, int current) {
 		int hurt;
-		// ¹¥»÷ÓĞĞ§¶ÔÏó
+		// æ”»å‡»æœ‰æ•ˆå¯¹è±¡
 		if (human[current].HP == 0) {
 			for (int index = 0; index < human.length; index++) {
 				if (human[index].HP != 0) {
@@ -77,13 +77,13 @@ public class Animals implements Serializable {
 				hurt -= 0 - human[current].HP;
 				human[current].HP = 0;
 			}
-			return name + "¶Ô " + human[current].name + " Ôì³ÉÁË" + hurt + "ÉËº¦\n";
+			return name + "å¯¹ " + human[current].name + " é€ æˆäº†" + hurt + "ä¼¤å®³\n";
 		} else {
-			return name + "µÄ¹¥»÷Î´ÄÜÆÆ·À!\n";
+			return name + "çš„æ”»å‡»æœªèƒ½ç ´é˜²!\n";
 		}
 	}
 
-	// ÊôĞÔÃæ°å
+	// å±æ€§é¢æ¿
 	public synchronized String print() {
 		synchronized (this) {
 			String des = "Name:" + name + "\n\nLevel:" + level + "\n\nExp:" + exp + "/" + (level * 100) + "\n\nHP:" + HP
@@ -96,7 +96,7 @@ public class Animals implements Serializable {
 		}
 	}
 
-	// µÈ¼¶
+	// ç­‰çº§
 	public boolean levelUp(int exp) {
 		this.exp += exp;
 		if (this.exp >= 100 * level) {
@@ -123,7 +123,7 @@ class Land extends Animals {
 class Tiger extends Land {
 	public Tiger() {
 		super(300, 25, 12);
-		name = "»¢";
+		name = "è™";
 		image = new ImageIcon("Images/Tiger.JPG");
 	}
 
@@ -135,7 +135,7 @@ class Tiger extends Land {
 class Lion extends Land {
 	public Lion() {
 		super(300, 28, 10);
-		name = "Ê¨";
+		name = "ç‹®";
 		image = new ImageIcon("Images/Lion.JPG");
 	}
 
@@ -147,7 +147,7 @@ class Lion extends Land {
 class Bear extends Land {
 	public Bear() {
 		super(350, 23, 13);
-		name = "ĞÜ";
+		name = "ç†Š";
 		image = new ImageIcon("Images/Bear.JPG");
 	}
 
@@ -159,7 +159,7 @@ class Bear extends Land {
 class Elephant extends Land {
 	public Elephant() {
 		super(400, 30, 18);
-		name = "Ïó";
+		name = "è±¡";
 		image = new ImageIcon("Images/Elephant.JPG");
 	}
 
@@ -180,7 +180,7 @@ class Ocean extends Animals {
 class Whale extends Ocean {
 	public Whale() {
 		super(400, 32, 17);
-		name = "¾¨";
+		name = "é²¸";
 		image = new ImageIcon("Images/Whale.JPG");
 	}
 
@@ -202,7 +202,7 @@ class Sky extends Animals {
 class Eagle extends Sky {
 	public Eagle() {
 		super(400, 32, 17);
-		name = "°×Í·Ó¥";
+		name = "ç™½å¤´é¹°";
 		image = new ImageIcon("Images/Eagle.JPG");
 	}
 

@@ -9,12 +9,12 @@ import java.io.Serializable;
 import javax.swing.*;
 
 public class ActMenu extends JPanel implements Serializable {
-	JFrame options = new JFrame("Ñ¡Ïî");
+	JFrame options = new JFrame("é€‰é¡¹");
 
-	JButton[] buttons = { new JButton("Õ½¶·"), new JButton("µ±Ç°³öÕ½"), new JButton("±³°ü"), new JButton("ÉÌµê"),
-			new JButton("»ùµØ"), new JButton("Ñ¡Ïî") };
+	JButton[] buttons = { new JButton("æˆ˜æ–—"), new JButton("å½“å‰å‡ºæˆ˜"), new JButton("èƒŒåŒ…"), new JButton("å•†åº—"),
+			new JButton("åŸºåœ°"), new JButton("é€‰é¡¹") };
 
-	JButton[] ops = { new JButton("¼ÌĞøÓÎÏ·"),new JButton("±£´æÓÎÏ·"), new JButton("¶ÁÈ¡´æµµ"),new JButton("  °ïÖú  ")};
+	JButton[] ops = { new JButton("ç»§ç»­æ¸¸æˆ"),new JButton("ä¿å­˜æ¸¸æˆ"), new JButton("è¯»å–å­˜æ¡£"),new JButton("  å¸®åŠ©  ")};
 	
 	public ActMenu() {
  
@@ -61,7 +61,7 @@ public class ActMenu extends JPanel implements Serializable {
 		}
 	}
 	
-	//Ñ¡Ïî°´Å¥
+	//é€‰é¡¹æŒ‰é’®
 	
 	public void options(JFrame options) {
 		
@@ -88,12 +88,12 @@ public class ActMenu extends JPanel implements Serializable {
 			}
 			else if(e.getSource()==ops[1]){
 				S_L.Save();
-				JOptionPane.showMessageDialog(null, "ÓÎÏ·ÒÑ±£´æ", "±£´æ", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "æ¸¸æˆå·²ä¿å­˜", "ä¿å­˜", JOptionPane.INFORMATION_MESSAGE);
 				options.setVisible(false);
 			}
 			else if(e.getSource()==ops[2]){
 				S_L.Load();
-				JOptionPane.showMessageDialog(null, "´æµµÒÑÔØÈë", "¶ÁÈ¡´æµµ", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "å­˜æ¡£å·²è½½å…¥", "è¯»å–å­˜æ¡£", JOptionPane.INFORMATION_MESSAGE);
 				options.setVisible(false);
 			}
 			else if(e.getSource()==ops[3]){

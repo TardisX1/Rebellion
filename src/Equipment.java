@@ -15,13 +15,13 @@ public class Equipment implements Serializable{
 
 	}
 	
-	// Êä³ö×°±¸Êı¾İ
+	// è¾“å‡ºè£…å¤‡æ•°æ®
 	public String print() {
-		String des = name + "      \n¹¥»÷£º" + ATK + "      \n·ÀÓù£º" + DEF + "      \nÄÍ¾Ã£º" + endurance + "      \n¼Û¸ñ" + cost;
+		String des = name + "      \næ”»å‡»ï¼š" + ATK + "      \né˜²å¾¡ï¼š" + DEF + "      \nè€ä¹…ï¼š" + endurance + "      \nä»·æ ¼" + cost;
 		return des;
 	}
 
-	// ¸ù¾İËæ»úÊı¾ö¶¨Éú³ÉµÄ×°±¸Æ·ÖÊ
+	// æ ¹æ®éšæœºæ•°å†³å®šç”Ÿæˆçš„è£…å¤‡å“è´¨
 	public  Equipment changeQuality() {
 		Random generator = new Random();
 		int rand = generator.nextInt(100) + 1;
@@ -29,29 +29,29 @@ public class Equipment implements Serializable{
 		int level = 0;
 		if (rand >= 1 && rand <= 20) {
 			cost /= 2;
-			name = "ÆÆÀÃµÄ" + name;
+			name = "ç ´çƒ‚çš„" + name;
 			if (this instanceof AddATK)
 				ATK /= 2;
 			else if (this instanceof AddDEF)
 				DEF /= 2;
 		} else {
 			if (rand >= 21 && rand <= 50) {
-				name = "ÆÕÍ¨µÄ" + name;
+				name = "æ™®é€šçš„" + name;
 				level = 1;
 			} else if (rand >= 51 && rand <= 75) {
-				name = "ÓÅĞãµÄ" + name;
+				name = "ä¼˜ç§€çš„" + name;
 	      		level = 2;
 			} else if (rand >= 76 && rand <= 90) {
-				name = "¾«Á¼µÄ" + name;
+				name = "ç²¾è‰¯çš„" + name;
 				level = 3;
 			} else if (rand >= 91 && rand <= 96) {
-    			name = "¼«Æ·µÄ" + name;
+    			name = "æå“çš„" + name;
 				level = 4;
 			} else if (rand >= 97 && rand <= 99) {
-				name = "Ê·Ê«µÄ" + name;
+				name = "å²è¯—çš„" + name;
 				level = 5;
 			} else if (rand >= 100 && rand <= 100) {
-				name = "´«ËµµÄ" + name;
+				name = "ä¼ è¯´çš„" + name;
 				level = 6;
 			}
 			cost *= level;
@@ -80,14 +80,14 @@ class AddATK extends Equipment {
 
 class Teeth extends AddATK {
 	public Teeth() {
-		super("¼âÑÀ", 5, 100);
+		super("å°–ç‰™", 5, 100);
 		this.cost = 200;
 	}
 }
 
 class Claws extends AddATK {
 	public Claws() {
-		super("Àû×¦", 8, 100);
+		super("åˆ©çˆª", 8, 100);
 		this.cost = 300;
 	}
 }
@@ -100,21 +100,21 @@ class AddDEF extends Equipment {
 
 class Helmet extends AddDEF {
 	public Helmet() {
-		super("Í·¿ø", 5, 100);
+		super("å¤´ç›”", 5, 100);
 		this.cost = 200;
 	}
 }
 
 class Breastplate extends AddDEF {
 	public Breastplate() {
-		super("ĞØ¼×", 8, 100);
+		super("èƒ¸ç”²", 8, 100);
 		this.cost = 300;
 	}
 }
 
 class Kneecap extends AddDEF {
 	public Kneecap() {
-		super("»¤Ï¥", 3, 100);
+		super("æŠ¤è†", 3, 100);
 		this.cost = 100;
 	}
 }

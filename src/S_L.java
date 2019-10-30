@@ -63,7 +63,7 @@ public class S_L {
 		} catch (FileNotFoundException e) {
 			run.frames[1].setVisible(false);
         	run.frames[0].setVisible(true);
-			JOptionPane.showMessageDialog(null, "ÎÞ·¨¼ì²âµ½ÒÑÖª´æµµ", "ÔØÈëÊ§°Ü", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "æ— æ³•æ£€æµ‹åˆ°å·²çŸ¥å­˜æ¡£", "è½½å…¥å¤±è´¥", JOptionPane.INFORMATION_MESSAGE);
         	
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

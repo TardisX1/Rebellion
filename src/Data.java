@@ -6,7 +6,7 @@ import java.awt.event.MouseWheelListener;
 
 import javax.swing.*;
 
-//数据界面
+//鏁版嵁鐣岄潰
 public class Data extends JFrame {
 	Animals[] wargroup = { new Tiger(), new Lion(), new Bear() };
 	int money = 200;
@@ -42,7 +42,7 @@ public class Data extends JFrame {
 		add(Gold[0], BorderLayout.SOUTH);
 	}
 
-	// 实时更新
+	// 瀹炴椂鏇存柊
 	private class Description implements Runnable {
 		public void run() {
 			while (true) {
@@ -76,7 +76,7 @@ class createDes extends JPanel {
 	JTextPane words = new JTextPane();
 	JScrollPane jp = new JScrollPane(words);
 
-	JButton unload = new JButton("卸下装备");
+	JButton unload = new JButton("鍗镐笅瑁呭");
 
 	public createDes(Animals animal) {
 		setLayout(new BorderLayout());
@@ -89,7 +89,7 @@ class createDes extends JPanel {
 		words.setText((animal.print()));
 		words.setOpaque(false);
 
-		// 添加鼠标滑轮滚动事件
+		// 娣诲姞榧犳爣婊戣疆婊氬姩浜嬩欢
 		jp.getVerticalScrollBar().setUnitIncrement(10);
 		jp.setWheelScrollingEnabled(true);
 
@@ -112,7 +112,7 @@ class createDes extends JPanel {
 		add(s, BorderLayout.SOUTH);
 	}
 	
-	//第二个构造方法，为了消除战斗组中下阵无法取消“卸下装备”按钮，再次上阵按钮关联有误的BUG
+	//绗簩涓瀯閫犳柟娉曪紝涓轰簡娑堥櫎鎴樻枟缁勪腑涓嬮樀鏃犳硶鍙栨秷鈥滃嵏涓嬭澶団�濇寜閽紝鍐嶆涓婇樀鎸夐挳鍏宠仈鏈夎鐨凚UG
 	public createDes(Animals animal,int index) {
 		setLayout(new BorderLayout());
 		JPanel c = new JPanel();
@@ -123,7 +123,7 @@ class createDes extends JPanel {
 		words.setText((animal.print()));
 		words.setOpaque(false);
 
-		// 添加鼠标滑轮滚动事件
+		// 娣诲姞榧犳爣婊戣疆婊氬姩浜嬩欢
 		jp.getVerticalScrollBar().setUnitIncrement(10);
 		jp.setWheelScrollingEnabled(true);
 

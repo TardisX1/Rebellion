@@ -26,18 +26,18 @@ public class run implements Serializable{
 		frames[0].setVisible(true);
 
 	}
-    //Ê¹¿ò¼ÜÏÔÊ¾ÔÚÆÁÄ»ÖĞÑë
+    //ä½¿æ¡†æ¶æ˜¾ç¤ºåœ¨å±å¹•ä¸­å¤®
 	public static void screencentre(JFrame frame) {
 
-		Toolkit kit = Toolkit.getDefaultToolkit(); // ¶¨Òå¹¤¾ß°ü
+		Toolkit kit = Toolkit.getDefaultToolkit(); // å®šä¹‰å·¥å…·åŒ…
 
-		Dimension screenSize = kit.getScreenSize(); // »ñÈ¡ÆÁÄ»µÄ³ß´ç
+		Dimension screenSize = kit.getScreenSize(); // è·å–å±å¹•çš„å°ºå¯¸
 
-		int screenWidth = screenSize.width; // »ñÈ¡ÆÁÄ»µÄ¿í
+		int screenWidth = screenSize.width; // è·å–å±å¹•çš„å®½
 
-		int screenHeight = screenSize.height; // »ñÈ¡ÆÁÄ»µÄ¸ß
+		int screenHeight = screenSize.height; // è·å–å±å¹•çš„é«˜
 
 		
-		frame.setLocation(screenWidth/4, screenHeight/15);// ÉèÖÃ´°¿Ú¾ÓÖĞÏÔÊ¾
+		frame.setLocation(screenWidth/4, screenHeight/15);// è®¾ç½®çª—å£å±…ä¸­æ˜¾ç¤º
 	}
 }

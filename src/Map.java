@@ -11,43 +11,43 @@ public class Map extends JFrame {
 
 	JPanel up = new JPanel();
 	JPanel Zoo = new JPanel();
-	JLabel ZooLa = new JLabel("                  Area 1 ¶¯ÎïÔ°                             ");
-	JButton[] ZooBt = { new JButton("          ÊŞÁıÍÑ³ö            "), 
-			new JButton("           ½ÖµÀÍ»Î§             "), 
-			new JButton("            Ï£ÍûÖ®ÃÅ             ")};
+	JLabel ZooLa = new JLabel("                  Area 1 åŠ¨ç‰©å›­                             ");
+	JButton[] ZooBt = { new JButton("          å…½ç¬¼è„±å‡º            "), 
+			new JButton("           è¡—é“çªå›´             "), 
+			new JButton("            å¸Œæœ›ä¹‹é—¨             ")};
 	
 	JPanel Land = new JPanel();
-	JLabel LandLa = new JLabel("            Area 2-1 Â½µØ                      ");
-	JButton[] LandBt = { new JButton("           Í´»÷ÍµÁÔÕß              ") ,
-			new JButton("           ´óÕ½á÷ÁÔ³¡              "),
-			new JButton("          À¹½Ø··ÂôÔËÊä³µ       "),
-			new JButton("           ¹¥ÏİÒ°Î¶²Í¹İ          "),
-			new JButton("          ´İ»ÙÃ«Æ¤¹¤³§           ")};
+	JLabel LandLa = new JLabel("            Area 2-1 é™†åœ°                      ");
+	JButton[] LandBt = { new JButton("           ç—›å‡»å·çŒè€…              ") ,
+			new JButton("           å¤§æˆ˜ç‹©çŒåœº              "),
+			new JButton("          æ‹¦æˆªè´©å–è¿è¾“è½¦       "),
+			new JButton("           æ”»é™·é‡å‘³é¤é¦†          "),
+			new JButton("          æ‘§æ¯æ¯›çš®å·¥å‚           ")};
 
 	JPanel Sea = new JPanel();
-	JLabel SeaLa = new JLabel("                Area 2-2 º£Ñó                    ");
-	JButton[] SeaBt = { new JButton("              ×èÖ¹ÀÄ²¶ÓãÀà           "),
-			new JButton("              Ó­Õ½²¶¾¨´¬                ") ,
-			new JButton("              ÕûÖÎÅÅÎÛÆóÒµ            "),
-			new JButton("              ´óÄÖº£ÏÊ²Í¹İ             "),
-			new JButton("             µ·»ÙÎ£ÏÕÉùÄÉ              ")};
+	JLabel SeaLa = new JLabel("                Area 2-2 æµ·æ´‹                    ");
+	JButton[] SeaBt = { new JButton("              é˜»æ­¢æ»¥æ•é±¼ç±»           "),
+			new JButton("              è¿æˆ˜æ•é²¸èˆ¹                ") ,
+			new JButton("              æ•´æ²»æ’æ±¡ä¼ä¸š            "),
+			new JButton("              å¤§é—¹æµ·é²œé¤é¦†             "),
+			new JButton("             æ£æ¯å±é™©å£°çº³              ")};
 
 	JPanel Sky = new JPanel();
-	JLabel SkyLa = new JLabel("           Area 2-3 Ìì¿Õ              ");
-	JButton[] SkyBt = { new JButton("         ±©×áÌÍÄñÎÑµÄĞÜº¢×Ó   "),
-			new JButton("          Í´´ò²¶ÄñÕß                    "),
-			new JButton("          Õ÷·ş»¨ÄñÊĞ³¡                "),
-			new JButton("          ½ûÖ¹ÀÄÉ±ÄñÀà                "),
-			new JButton("         »÷ÂäÕÏ°­Îï·É»ú             ")};
+	JLabel SkyLa = new JLabel("           Area 2-3 å¤©ç©º              ");
+	JButton[] SkyBt = { new JButton("         æš´ææé¸Ÿçªçš„ç†Šå­©å­   "),
+			new JButton("          ç—›æ‰“æ•é¸Ÿè€…                    "),
+			new JButton("          å¾æœèŠ±é¸Ÿå¸‚åœº                "),
+			new JButton("          ç¦æ­¢æ»¥æ€é¸Ÿç±»                "),
+			new JButton("         å‡»è½éšœç¢ç‰©é£æœº             ")};
 
 	JPanel down = new JPanel();
 	JPanel End = new JPanel();
-	JLabel EndLa = new JLabel("         Area 3 ÖÕÕÂ           ");
-	JButton[] EndBt = { new JButton("       ĞûÕ½      ") ,
-			new JButton("       »ğ²¢     	"),
-			new JButton("       »ìÕ½        ") ,
-			new JButton("       ¾öÕ½         ") ,
-			new JButton("       ¼èÄÑºÍÌ¸          ") };
+	JLabel EndLa = new JLabel("         Area 3 ç»ˆç«            ");
+	JButton[] EndBt = { new JButton("       å®£æˆ˜      ") ,
+			new JButton("       ç«å¹¶     	"),
+			new JButton("       æ··æˆ˜        ") ,
+			new JButton("       å†³æˆ˜         ") ,
+			new JButton("       è‰°éš¾å’Œè°ˆ          ") };
 
 	JPanel cen = new JPanel();
 	JPanel[] panels = { Zoo, Land, Sea, Sky, End };
@@ -87,7 +87,7 @@ public class Map extends JFrame {
 		
 	}
 
-	// ´´½¨ÈËÀàµĞÈË×é
+	// åˆ›å»ºäººç±»æ•Œäººç»„
 	public Humen[] CreArray(int area, int process) {
 		Humen[] enermy = new Humen[3];
 		for (int index = 0; index < 3; index++) {
@@ -109,15 +109,15 @@ public class Map extends JFrame {
 
 	private class MapLis implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			//¼ì²â³öÕ½½ÇÉ«Êı
+			//æ£€æµ‹å‡ºæˆ˜è§’è‰²æ•°
 			for (int count = 0; count < run.data.wargroup.length; count++)
 				if(run.data.wargroup[count]==null){
-					JOptionPane.showMessageDialog(null, "³öÕ½ÊıÁ¿Ğ¡ÓÚÈı£¡", "Õ½¶·Á¦²»×ã ", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "å‡ºæˆ˜æ•°é‡å°äºä¸‰ï¼", "æˆ˜æ–—åŠ›ä¸è¶³ ", JOptionPane.INFORMATION_MESSAGE);
 					
 					return;
 				}
 			setVisible(false);
-			//¸ù¾İ²ÎÊıÈ·¶¨µĞÈËÀàĞÍ
+			//æ ¹æ®å‚æ•°ç¡®å®šæ•Œäººç±»å‹
 			loop: for (int area = 0; area < buttons.length; area++)
 				for (int process = 0; process < buttons[area].length; process++) {
 					if (e.getSource() == buttons[area][process]) {

@@ -15,7 +15,7 @@ public class Humen {
 
 	public String attack(Animals[] animal, int current) {
 		int hurt;
-		// ¹¥»÷ÓÐÐ§¶ÔÏó
+		// æ”»å‡»æœ‰æ•ˆå¯¹è±¡
 		if (animal[current].HP == 0) {
 			for (int index = 0; index < animal.length; index++) {
 				if (animal[index].HP != 0) {
@@ -31,9 +31,9 @@ public class Humen {
 				hurt-= 0 - animal[current].HP;
 				animal[current].HP = 0;
 			}
-			return name + "¶Ô " + animal[current].name + " Ôì³ÉÁË" + hurt + "ÉËº¦\n\n";
+			return name + "å¯¹ " + animal[current].name + " é€ æˆäº†" + hurt + "ä¼¤å®³\n\n";
 		} else {
-			return name + "µÄ¹¥»÷Î´ÄÜÆÆ·À£¡\n\n";
+			return name + "çš„æ”»å‡»æœªèƒ½ç ´é˜²ï¼\n\n";
 		}
 	}
 
@@ -47,15 +47,15 @@ class HumenZoo extends Humen {
 		super(200 + process * 10, 25 + process * 2, 5 + process);
 		switch (process) {
 		case 0:
-			this.name = "¶¯ÎïÔ°ËÇÑøÔ±";
+			this.name = "åŠ¨ç‰©å›­é¥²å…»å‘˜";
 			this.image = new ImageIcon("Images/ZooFeeders.JPG");
 			break;
 		case 1:
-			this.name = "¶¯ÎïÔ°ÓÎ¿Í";
+			this.name = "åŠ¨ç‰©å›­æ¸¸å®¢";
 			this.image = new ImageIcon("Images/ZooTourists.JPG");
 			break;
 		case 2:
-			this.name = "¶¯ÎïÔ°±£°²";
+			this.name = "åŠ¨ç‰©å›­ä¿å®‰";
 			this.image = new ImageIcon("Images/ZooGuards.JPG");
 			break;
 		}
@@ -68,23 +68,23 @@ class HumenLand extends Humen {
 		super(250 + process * 10, 32 + process * 5, 10 + process * 3);
 		switch (process) {
 		case 0:
-			this.name = "ÍµÁÔÕß";
+			this.name = "å·çŒŽè€…";
 			this.image = new ImageIcon("Images/LandPoacher.JPG");
 			break;
 		case 1:
-			this.name = "á÷ÁÔÕß";
+			this.name = "ç‹©çŒŽè€…";
 			this.image = new ImageIcon("Images/LandHunters.JPG");
 			break;
 		case 2:
-			this.name = "»õ³µË¾»ú";
+			this.name = "è´§è½¦å¸æœº";
 			this.image = new ImageIcon("Images/LandCar.JPG");
 			break;
 		case 3:
-			this.name = "Ò°Î¶²Í¹ÝÀÏ°å";
+			this.name = "é‡Žå‘³é¤é¦†è€æ¿";
 			this.image = new ImageIcon("Images/LandRes.JPG");
 			break;
 		case 4:
-			this.name = "¹¤³§°²±£";
+			this.name = "å·¥åŽ‚å®‰ä¿";
 			this.image = new ImageIcon("Images/LandGuards.JPG");
 			break;
 		}
@@ -96,23 +96,23 @@ class HumenSea extends Humen {
 		super(250 + process * 10, 32 + process * 5, 10 + process * 3);
 		switch (process) {
 		case 0:
-			this.name = "ÓæÃñ";
+			this.name = "æ¸”æ°‘";
 			this.image = new ImageIcon("Images/SeaFishing.JPG");
 			break;
 		case 1:
-			this.name = "²¶¾¨´¬";
+			this.name = "æ•é²¸èˆ¹";
 			this.image = new ImageIcon("Images/SeaShip.JPG");
 			break;
 		case 2:
-			this.name = "¹¤³§°²±£";
+			this.name = "å·¥åŽ‚å®‰ä¿";
 			this.image = new ImageIcon("Images/SeaGuards.JPG");
 			break;
 		case 3:
-			this.name = "º£ÏÊ²Í¹ÝÔ±¹¤";
+			this.name = "æµ·é²œé¤é¦†å‘˜å·¥";
 			this.image = new ImageIcon("Images/SeaStaff.JPG");
 			break;
 		case 4:
-			this.name = "º£ÑóÉùÄÉ";
+			this.name = "æµ·æ´‹å£°çº³";
 			this.image = new ImageIcon("Images/SeaSonar.JPG");
 			break;
 
@@ -125,23 +125,23 @@ class HumenSky extends Humen {
 		super(250 + process * 10, 32 + process * 5, 10 + process * 3);
 		switch (process) {
 		case 0:
-			this.name = "ÌÍÄñÎÑµÄÐÜº¢×Ó";
+			this.name = "æŽé¸Ÿçªçš„ç†Šå­©å­";
 			this.image = new ImageIcon("Images/SkyKids.JPG");
 			break;
 		case 1:
-			this.name = "²¶ÄñÕß";
+			this.name = "æ•é¸Ÿè€…";
 			this.image = new ImageIcon("Images/SkyCatcher.JPG");
 			break;
 		case 2:
-			this.name = "ÊÐ³¡Ð¡··";
+			this.name = "å¸‚åœºå°è´©";
 			this.image = new ImageIcon("Images/SkyKeeper.JPG");
 			break;
 		case 3:
-			this.name = "ÁÔÄñÈË";
+			this.name = "çŒŽé¸Ÿäºº";
 			this.image = new ImageIcon("Images/SkyKiller.JPG");
 			break;
 		case 4:
-			this.name = "·É»ú";
+			this.name = "é£žæœº";
 			this.image = new ImageIcon("Images/SkyPlane.JPG");
 			break;
 
@@ -154,23 +154,23 @@ class HumenEnd extends Humen {
 		super(300 + process * 10, 55 + process * 5, 40 + process * 3);
 		switch (process) {
 		case 0:
-			this.name = "Ì¸ÅÐÈË";
+			this.name = "è°ˆåˆ¤äºº";
 			this.image = new ImageIcon("Images/EndSpeaker.JPG");
 			break;
 		case 1:
-			this.name = "·´¶ÔÌ¸ÅÐÕß";
+			this.name = "åå¯¹è°ˆåˆ¤è€…";
 			this.image = new ImageIcon("Images/EndProtest.JPG");
 			break;
 		case 2:
-			this.name = "ÈËÈº";
+			this.name = "äººç¾¤";
 			this.image = new ImageIcon("Images/EndPeople.JPG");
 			break;
 		case 3:
-			this.name = "¾ü¶Ó";
+			this.name = "å†›é˜Ÿ";
 			this.image = new ImageIcon("Images/EndArmy.JPG");
 			break;
 		case 4:
-			this.name = "»¤ÎÀÎä¾¯";
+			this.name = "æŠ¤å«æ­¦è­¦";
 			this.image = new ImageIcon("Images/EndGuards.JPG");
 			break;
 

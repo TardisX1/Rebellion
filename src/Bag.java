@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-//±³°ü½çÃæ
+//èƒŒåŒ…ç•Œé¢
 public class Bag extends JFrame {
 	JPanel center = new JPanel();
 	dataDes data = new dataDes();
@@ -23,11 +23,11 @@ public class Bag extends JFrame {
 	}
 }
 
-// µ±Ç°×°±¸
+// å½“å‰è£…å¤‡
 class dataBag extends JTabbedPane {
 	int contain = 0;
 	int capacity = 20;
-	JLabel des = new JLabel("ÈİÁ¿      " + contain + "/" + capacity);
+	JLabel des = new JLabel("å®¹é‡      " + contain + "/" + capacity);
 	JPanel big = new JPanel();
 	JPanel bag = new JPanel();
 	Equipment[] item = new Equipment[capacity];
@@ -51,28 +51,28 @@ class dataBag extends JTabbedPane {
 		big.add(bag, BorderLayout.CENTER);
 		big.add(des, BorderLayout.SOUTH);
 
-		add("±³°ü", big);
+		add("èƒŒåŒ…", big);
 	}
 
-	// Ïò±³°üÌí¼Ó×°±¸
+	// å‘èƒŒåŒ…æ·»åŠ è£…å¤‡
 	public void equipAdd(Equipment equip) {
 		for (int index = 0; index < capacity; index++) {
-			// ¸Ã¸ñ×ÓÃ»ÓĞÎïÆ·Ê± Ìí¼Ó¸ÃÎïÆ·
+			// è¯¥æ ¼å­æ²¡æœ‰ç‰©å“æ—¶ æ·»åŠ è¯¥ç‰©å“
 			if (item[index] instanceof Blank) {
 				if (!(equip instanceof Blank)) {
 					item[index] = equip;
 					display[index].setText(item[index].print());
-					des.setText("ÈİÁ¿      " + (++contain) + "/" + capacity);
+					des.setText("å®¹é‡      " + (++contain) + "/" + capacity);
 				}
 				return;
 			}
 		}
-		// Ã»ÓĞreturn ±íÃ÷±³°üÒÑÂú
-		JOptionPane.showMessageDialog(null, "±³°üÒÑÂú£¬ÎŞ·¨Ìí¼Ó×°±¸£¡", "±³°üÒÑÂú", JOptionPane.INFORMATION_MESSAGE);
+		// æ²¡æœ‰return è¡¨æ˜èƒŒåŒ…å·²æ»¡
+		JOptionPane.showMessageDialog(null, "èƒŒåŒ…å·²æ»¡ï¼Œæ— æ³•æ·»åŠ è£…å¤‡ï¼", "èƒŒåŒ…å·²æ»¡", JOptionPane.INFORMATION_MESSAGE);
 
 	}
 
-	// ÓÒ¼üµ¯³ö²Ëµ¥
+	// å³é”®å¼¹å‡ºèœå•
 	public JPopupMenu popup(int index) {
 		JPopupMenu menu = new JPopupMenu();
 		menu.addMouseListener(new MouseAdapter() {
@@ -81,38 +81,38 @@ class dataBag extends JTabbedPane {
 			}
 		});
 
-		// ÓÒ¼ü×°±¸¹¦ÄÜ
-		JMenuItem equipV = new JMenuItem("×°±¸");
+		// å³é”®è£…å¤‡åŠŸèƒ½
+		JMenuItem equipV = new JMenuItem("è£…å¤‡");
 		equipV.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Animals ani = run.base.members[data.getSelectedIndex()];
 				item[index] = ani.changeEquip(item[index]);
 				if (item[index] instanceof Blank) {
 					display[index].setText("");
-					des.setText("ÈİÁ¿      " + (--contain) + "/" + capacity);
+					des.setText("å®¹é‡      " + (--contain) + "/" + capacity);
 				} else
 					display[index].setText(item[index].print());
 			}
 		});
 
-		// ÓÒ¼ü³öÊÛ¹¦ÄÜ
-		JMenuItem sellV = new JMenuItem("³öÊÛ");
+		// å³é”®å‡ºå”®åŠŸèƒ½
+		JMenuItem sellV = new JMenuItem("å‡ºå”®");
 		sellV.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				run.data.money += item[index].cost;
 				item[index] = new Blank();
 				display[index].setText("");
-				des.setText("±³°ü      " + (--contain) + "/" + capacity);
+				des.setText("èƒŒåŒ…      " + (--contain) + "/" + capacity);
 			}
 		});
 
-		// ÓÒ¼ü¶ªÆú¹¦ÄÜ
-		JMenuItem throwV = new JMenuItem("¶ªÆú");
+		// å³é”®ä¸¢å¼ƒåŠŸèƒ½
+		JMenuItem throwV = new JMenuItem("ä¸¢å¼ƒ");
 		throwV.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				item[index] = new Blank();
 				display[index].setText("");
-				des.setText("ÈİÁ¿      " + (--contain) + "/" + capacity);
+				des.setText("å®¹é‡      " + (--contain) + "/" + capacity);
 			}
 		});
 
@@ -126,7 +126,7 @@ class dataBag extends JTabbedPane {
 
 }
 
-// µ±Ç°ÊôĞÔ
+// å½“å‰å±æ€§
 class dataDes extends JTabbedPane {
 	createDes[] des = new createDes[run.base.members.length];
 
@@ -143,7 +143,7 @@ class dataDes extends JTabbedPane {
 		desc.start();
 	}
 
-	// ´´½¨ĞÂ½ÇÉ«±êÇ©
+	// åˆ›å»ºæ–°è§’è‰²æ ‡ç­¾
 	public void createTab(int index, Animals animal) {
 		synchronized (this) { 
 		des[index] = new createDes(animal);
@@ -151,7 +151,7 @@ class dataDes extends JTabbedPane {
 		}
 	}
 
-	// ÊµÊ±¸üĞÂ
+	// å®æ—¶æ›´æ–°
 	private class Description implements Runnable {
 		public void run() {
 			while (true) {

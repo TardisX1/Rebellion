@@ -4,7 +4,7 @@ import java.util.Random;
 
 import javax.swing.*;
 
-//Õ½¶·½çÃæ
+//æˆ˜æ–—ç•Œé¢
 public class Fighting extends JFrame {
 
 	int hucount = 0, anicount = 0, current = 0, gain, lost, area, process, experience;
@@ -53,7 +53,7 @@ public class Fighting extends JFrame {
 
 	}
 
-	// HP½çÃæ
+	// HPç•Œé¢
 	public String printHP(Animals[] animal) {
 		String HP = "";
 		for (int index = 0; index < animal.length; index++) {
@@ -71,16 +71,16 @@ public class Fighting extends JFrame {
 		return HP;
 	}
 
-	// È·¶¨¿ªÊ¼Õ½¶·Ê±±¾·½Éú´æ×´Ì¬
+	// ç¡®å®šå¼€å§‹æˆ˜æ–—æ—¶æœ¬æ–¹ç”Ÿå­˜çŠ¶æ€
 	public void CheckAlive() {
 		for (int index = 0; index < run.data.wargroup.length; index++)
 			if (run.data.wargroup[index].HP == 0)
 				anicount++;
 	}
 
-	// ¹¥»÷
+	// æ”»å‡»
 	public void MyAttack(Humen[] humans) {
-		// Ê¹ÓĞĞ§¶ÔÏó¹¥»÷
+		// ä½¿æœ‰æ•ˆå¯¹è±¡æ”»å‡»
 		if (run.data.wargroup[current].HP == 0) {
 			for (int index = 0; index < run.data.wargroup.length; index++) {
 				if (run.data.wargroup[index].HP != 0) {
@@ -91,41 +91,41 @@ public class Fighting extends JFrame {
 		} else
 			des += run.data.wargroup[current].attack(humans, current);
 
-		// Õ½¶·ĞÅÏ¢ÃèÊö
+		// æˆ˜æ–—ä¿¡æ¯æè¿°
 		EnHP.setText(printHP(humans));
 		Description.setText(des);
-		// ×°±¸ÄÍ¾Ã½µµÍ
+		// è£…å¤‡è€ä¹…é™ä½
 		run.data.wargroup[current].enduranceDown();
-		// ¼ÆËãµĞÈËµ¹ÏÂÊı
+		// è®¡ç®—æ•Œäººå€’ä¸‹æ•°
 		hucount = 0;
 		for (int index = 0; index < humans.length; index++)
 			if (humans[index].HP <= 0) {
 				hucount++;
 			}
-		// Ê¤Àû µĞÈËÈ«²¿µ¹ÏÂ
+		// èƒœåˆ© æ•Œäººå…¨éƒ¨å€’ä¸‹
 		if (hucount >= humans.length) {
 
 			ImageIcon victory = new ImageIcon("Images/Victory.JPG");
 			Equipment drop = drop();
-			// »ñµÃ¾­Ñé ½ğÇ® ×°±¸
-			String win = "Õ½¶·Ê¤Àû\n»ñµÃ " + experience + " ¾­Ñé£¡\n»ñµÃ " + gain + " Gold!\n";
+			// è·å¾—ç»éªŒ é‡‘é’± è£…å¤‡
+			String win = "æˆ˜æ–—èƒœåˆ©\nè·å¾— " + experience + " ç»éªŒï¼\nè·å¾— " + gain + " Gold!\n";
 			if (drop != null) {
 				run.bag.bag.equipAdd(drop);
-				win += "»ñµÃ×°±¸£º" + drop.name + "\n";
+				win += "è·å¾—è£…å¤‡ï¼š" + drop.name + "\n";
 			}
 			run.data.money += gain;
-			// µÈ¼¶ÌáÉıĞÅÏ¢
+			// ç­‰çº§æå‡ä¿¡æ¯
 			for (int index = 0; index < run.data.wargroup.length; index++)
 				if (run.data.wargroup[index].levelUp(experience))
-					win += "\n" + run.data.wargroup[index].name + " Éıµ½ " + run.data.wargroup[index].level + " ¼¶£¡";
-			// µ¯³öĞÅÏ¢¿ò
-			JOptionPane.showMessageDialog(null, win, "Ê¤Àû", JOptionPane.INFORMATION_MESSAGE, victory);
+					win += "\n" + run.data.wargroup[index].name + " å‡åˆ° " + run.data.wargroup[index].level + " çº§ï¼";
+			// å¼¹å‡ºä¿¡æ¯æ¡†
+			JOptionPane.showMessageDialog(null, win, "èƒœåˆ©", JOptionPane.INFORMATION_MESSAGE, victory);
 			
-			//»ñµÃĞÂ³ÉÔ±
+			//è·å¾—æ–°æˆå‘˜
 			run.base.AddMember(area,process);
 			
 			this.setVisible(false);
-			// ±¾¹ØÒÑÕ÷·ş
+			// æœ¬å…³å·²å¾æœ
 			if (process < run.map.buttons[area].length) {
 				run.map.buttons[area][process].setForeground(Color.blue);
 			}
@@ -137,7 +137,7 @@ public class Fighting extends JFrame {
 	}
 
 	public void EnAttack(Animals[] animal) {
-		// Ê¹ÓĞĞ§¶ÔÏó¹¥»÷
+		// ä½¿æœ‰æ•ˆå¯¹è±¡æ”»å‡»
 		if (humans[current].HP == 0) {
 			for (int index = 0; index < humans.length; index++) {
 				if (humans[index].HP != 0) {
@@ -153,21 +153,21 @@ public class Fighting extends JFrame {
 		current++;
 		if (current % 3 == 0)
 			current = 0;
-		// ¼ÆËãÎÒ·½µ¹ÏÂÊı
+		// è®¡ç®—æˆ‘æ–¹å€’ä¸‹æ•°
 		anicount = 0;
 		for (int index = 0; index < animal.length; index++)
 			if (animal[index].HP <= 0) {
 				anicount++;
 			}
-		// Ê§°Ü ÎÒ·½È«²¿µ¹ÏÂ
+		// å¤±è´¥ æˆ‘æ–¹å…¨éƒ¨å€’ä¸‹
 		if (anicount >= animal.length) {
-			//¿ÛÇ®
+			//æ‰£é’±
 			if(run.data.money<=lost)
 				lost=run.data.money;
 			run.data.money-=lost;
 			
 			ImageIcon lose = new ImageIcon("Images/Lost.JPG");
-			JOptionPane.showMessageDialog(null, "Õ½¶·Ê§°Ü\nÊ§È¥ " + lost + " Gold!", "Ê§°Ü", JOptionPane.INFORMATION_MESSAGE,
+			JOptionPane.showMessageDialog(null, "æˆ˜æ–—å¤±è´¥\nå¤±å» " + lost + " Gold!", "å¤±è´¥", JOptionPane.INFORMATION_MESSAGE,
 					lose);
 			this.setVisible(false);
 
@@ -177,7 +177,7 @@ public class Fighting extends JFrame {
 
 	}
 
-	// Ëæ»úµô×°±¸
+	// éšæœºæ‰è£…å¤‡
 	public Equipment drop() {
 		Equipment drop = null;
 		Random gene = new Random();
@@ -196,13 +196,13 @@ public class Fighting extends JFrame {
 		return drop;
 	}
 
-	// Õ½¶·²Ù×÷
+	// æˆ˜æ–—æ“ä½œ
 	public JPanel oPanel() {
 		JPanel operation = new JPanel();
 		JPanel[] op = new JPanel[3];
-		buts[0] = new JButton("¹¥»÷");
-		buts[1] = new JButton("ÖÎÁÆ(¼±¾È°ü:" + run.base.aidnum + "/10)");
-		buts[2] = new JButton("ÌÓÅÜ");
+		buts[0] = new JButton("æ”»å‡»");
+		buts[1] = new JButton("æ²»ç–—(æ€¥æ•‘åŒ…:" + run.base.aidnum + "/10)");
+		buts[2] = new JButton("é€ƒè·‘");
 		operation.setLayout(new GridLayout(3, 1));
 		for (int index = 0; index < buts.length; index++) {
 			buts[index].addActionListener(new attackLis());
@@ -215,7 +215,7 @@ public class Fighting extends JFrame {
 
 	private class attackLis implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
-			// ¹¥»÷¼ü¼àÌıÆ÷
+			// æ”»å‡»é”®ç›‘å¬å™¨
 			if (e.getSource() == buts[0]) {
 				MyAttack(humans);
 				EnAttack(run.data.wargroup);
@@ -223,17 +223,17 @@ public class Fighting extends JFrame {
 				MyPic.setIcon(run.data.wargroup[current].image);
 
 			}
-			// ÖÎÁÆ¼ü
+			// æ²»ç–—é”®
 			else if (e.getSource() == buts[1]) {
 				for (int index = 0; index < run.base.Kits.length; index++) {
 					if (run.base.Kits[index] != null) {
 						run.base.Kits[index].cure(run.data.wargroup[current]);
 						run.base.aidnum--;
-						des += run.data.wargroup[current].name + " »Ø¸´ÁË " + run.base.Kits[index].recover + " ÉúÃü\n";
+						des += run.data.wargroup[current].name + " å›å¤äº† " + run.base.Kits[index].recover + " ç”Ÿå‘½\n";
 						Description.setText(des);
 						run.base.Kits[index] = null;
-						run.base.disaid.setText("¼±¾È°ü(µ¥ÌåÖÎÁÆ50)£º" + run.base.aidnum + "/10");
-						buts[1].setText("ÖÎÁÆ(¼±¾È°ü:" + run.base.aidnum + "/10)");
+						run.base.disaid.setText("æ€¥æ•‘åŒ…(å•ä½“æ²»ç–—50)ï¼š" + run.base.aidnum + "/10");
+						buts[1].setText("æ²»ç–—(æ€¥æ•‘åŒ…:" + run.base.aidnum + "/10)");
 						break;
 					}
 				}
@@ -245,7 +245,7 @@ public class Fighting extends JFrame {
 				EnHP.setText(printHP(humans));
 				MyHP.setText(printHP(run.data.wargroup));
 			}
-			// ÌÓÅÜ¼ü
+			// é€ƒè·‘é”®
 			else if (e.getSource() == buts[2]) {
 				EnAttack(run.data.wargroup);
 				dispose();

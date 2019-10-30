@@ -12,14 +12,14 @@ public class Base extends JFrame {
 	JButton[] gotowar = new JButton[members.length];
 	JButton[] gotorest = new JButton[members.length];
 
-	JButton cure = new JButton("     ÖÎÁÆËùÓĞ            ");
+	JButton cure = new JButton("     æ²»ç–—æ‰€æœ‰            ");
 	JPanel aid = new JPanel();
 	JPanel c = new JPanel();
 	JPanel b = new JPanel();
 	int aidnum = 0;
-	JLabel disaid = new JLabel("¼±¾È°ü(µ¥ÌåÖÎÁÆ50)£º0/10", JLabel.CENTER);
+	JLabel disaid = new JLabel("æ€¥æ•‘åŒ…(å•ä½“æ²»ç–—50)ï¼š0/10", JLabel.CENTER);
 	cureKit[] Kits = new cureKit[10];
-	JButton buyaid = new JButton("       ¹ºÂò¼±¾È°ü(100G)          ");
+	JButton buyaid = new JButton("       è´­ä¹°æ€¥æ•‘åŒ…(100G)          ");
 
 	public Base(String name) {
 		super(name);
@@ -31,13 +31,13 @@ public class Base extends JFrame {
 			members[index] = run.data.wargroup[index];
 			des[index] = createCharacter(index, members[index]);
 			gotowar[index].setEnabled(false);
-			gotowar[index].setLabel("ÒÑÉÏÕó");
+			gotowar[index].setLabel("å·²ä¸Šé˜µ");
 			gotorest[index].setEnabled(true);
-			gotorest[index].setLabel("ĞİÏ¢");
+			gotorest[index].setLabel("ä¼‘æ¯");
 			base.add(des[index]);
 		}
 
-		// Ìí¼ÓÊó±ê»¬ÂÖ¹ö¶¯ÊÂ¼ş
+		// æ·»åŠ é¼ æ ‡æ»‘è½®æ»šåŠ¨äº‹ä»¶
 		home.getVerticalScrollBar().setUnitIncrement(10);
 		home.setWheelScrollingEnabled(true);
 
@@ -64,7 +64,7 @@ public class Base extends JFrame {
 		add(run.data.Gold[3], BorderLayout.SOUTH);
 	}
 
-	// ´´½¨½ÇÉ«Ãæ°å
+	// åˆ›å»ºè§’è‰²é¢æ¿
 	public createDes createCharacter(int index, Animals animal) {
 		createDes basepanel = new createDes(animal);
 		JPanel big = new JPanel();
@@ -74,11 +74,11 @@ public class Base extends JFrame {
 		JPanel sgo = new JPanel();
 
 		sgo.setLayout(new GridLayout(1, 2));
-		gotowar[index] = new JButton("ÉÏÕó");
+		gotowar[index] = new JButton("ä¸Šé˜µ");
 		gotowar[index].addActionListener(new go());
 		sgo.add(gotowar[index]);
 
-		gotorest[index] = new JButton("ĞİÏ¢ÖĞ");
+		gotorest[index] = new JButton("ä¼‘æ¯ä¸­");
 		gotorest[index].setEnabled(false);
 		gotorest[index].addActionListener(new go());
 		sgo.add(gotorest[index]);
@@ -99,7 +99,7 @@ public class Base extends JFrame {
 		return basepanel;
 	}
 
-	// ÉÏÏÂÕó¼àÌıÆ÷
+	// ä¸Šä¸‹é˜µç›‘å¬å™¨
 	private class go implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			for (int index = 0; index < members.length; index++)
@@ -108,9 +108,9 @@ public class Base extends JFrame {
 						if (run.data.wargroup[count] == null) {
 							run.data.wargroup[count] = members[index];
 							gotowar[index].setEnabled(false);
-							gotowar[index].setLabel("ÒÑÉÏÕó");
+							gotowar[index].setLabel("å·²ä¸Šé˜µ");
 							gotorest[index].setEnabled(true);
-							gotorest[index].setLabel("ĞİÏ¢");
+							gotorest[index].setLabel("ä¼‘æ¯");
 							break;
 						}
 				} else if (e.getSource() == gotorest[index]) {
@@ -118,9 +118,9 @@ public class Base extends JFrame {
 						if (run.data.wargroup[count] == (members[index])) {
 							run.data.wargroup[count] = null;
 							gotorest[index].setEnabled(false);
-							gotorest[index].setLabel("ĞİÏ¢ÖĞ");
+							gotorest[index].setLabel("ä¼‘æ¯ä¸­");
 							gotowar[index].setEnabled(true);
-							gotowar[index].setLabel("ÉÏÕó");
+							gotowar[index].setLabel("ä¸Šé˜µ");
 							break;
 						}
 				}
@@ -128,10 +128,10 @@ public class Base extends JFrame {
 		}
 	}
 
-	// ¼ÓÈëĞÂ³ÉÔ±
+	// åŠ å…¥æ–°æˆå‘˜
 	public void AddMember(int area, int process) {
 		Animals newmember = null;
-		// Ã¿¸öÇøÓòµÚÒ»¹Ø»ñµÃĞÂ³ÉÔ±
+		// æ¯ä¸ªåŒºåŸŸç¬¬ä¸€å…³è·å¾—æ–°æˆå‘˜
 		if (process == 0) {
 			switch (area) {
 			case 1:
@@ -145,7 +145,7 @@ public class Base extends JFrame {
 				break;
 			}
 		}
-		// ÆäÓà¹ØËæ»ú¿ÉÄÜĞÔ»ñµÃ³ÉÔ±
+		// å…¶ä½™å…³éšæœºå¯èƒ½æ€§è·å¾—æˆå‘˜
 		else {
 			Random generator = new Random();
 			int rand = generator.nextInt(10);
@@ -163,10 +163,10 @@ public class Base extends JFrame {
 				}
 			}
 		}
-		// µ¯³öÈ·ÈÏ¿ò Ñ¡ÖĞ¡°ÊÇ¡±·µ»Ø0,Ñ¡ÖĞ¡°·ñ¡±·µ»Ø 1
+		// å¼¹å‡ºç¡®è®¤æ¡† é€‰ä¸­â€œæ˜¯â€è¿”å›0,é€‰ä¸­â€œå¦â€è¿”å› 1
 		if (newmember != null) {
-			int n = JOptionPane.showConfirmDialog(null, newmember.name + " ÏëÒª¼ÓÈëÄãµÄ¶ÓÎé£¡\n" + newmember.print() + "\nÊÇ·ñÍ¬Òâ?",
-					"ĞÂ³ÉÔ±", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, newmember.image);
+			int n = JOptionPane.showConfirmDialog(null, newmember.name + " æƒ³è¦åŠ å…¥ä½ çš„é˜Ÿä¼ï¼\n" + newmember.print() + "\næ˜¯å¦åŒæ„?",
+					"æ–°æˆå‘˜", JOptionPane.YES_NO_OPTION, JOptionPane.INFORMATION_MESSAGE, newmember.image);
 			if (n == 0)
 				for (int index = 0; index < members.length; index++)
 					if (members[index] == null) {
@@ -174,14 +174,14 @@ public class Base extends JFrame {
 						run.bag.data.createTab(index, newmember);
 						des[index] = createCharacter(index, newmember);
 						base.add(des[index]);
-						// ×îºóÌí¼Ó³ÉÔ± ·ÀÖ¹Ïß³Ì³öÏÖ¿ÕÖ¸Ïò
+						// æœ€åæ·»åŠ æˆå‘˜ é˜²æ­¢çº¿ç¨‹å‡ºç°ç©ºæŒ‡å‘
 						members[index] = newmember;
 						break;
 					}
 		}
 	}
 
-	// ÊµÊ±¸üĞÂ
+	// å®æ—¶æ›´æ–°
 	private class Description implements Runnable {
 		public void run() {
 			while (true) {
@@ -200,7 +200,7 @@ public class Base extends JFrame {
 		}
 	}
 
-	// ÖÎÁÆ
+	// æ²»ç–—
 	private class cure implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (!isFullHealth(members)) {
@@ -214,15 +214,15 @@ public class Base extends JFrame {
 				cost = cost10 / 10;
 				run.data.money -= cost;
 
-				JOptionPane.showMessageDialog(null, "ÖÎÁÆ³É¹¦£¡\nÊ§È¥ " + cost + " Gold!", "ÖÎÁÆ½áÊø",
+				JOptionPane.showMessageDialog(null, "æ²»ç–—æˆåŠŸï¼\nå¤±å» " + cost + " Gold!", "æ²»ç–—ç»“æŸ",
 						JOptionPane.INFORMATION_MESSAGE);
 			} else {
-				JOptionPane.showMessageDialog(null, "ÑªÁ¿ÎªÂú£¬ÎŞĞèÖÎÁÆ£¡\n,", "ÖÎÁÆ½áÊø", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "è¡€é‡ä¸ºæ»¡ï¼Œæ— éœ€æ²»ç–—ï¼\n,", "æ²»ç–—ç»“æŸ", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
 	}
 
-	// ¼ìÑéÊÇ·ñÈ«ÎªÂúÑª
+	// æ£€éªŒæ˜¯å¦å…¨ä¸ºæ»¡è¡€
 	public boolean isFullHealth(Animals[] animal) {
 		boolean is = true;
 		for (int index = 0; index < animal.length; index++) {
@@ -232,7 +232,7 @@ public class Base extends JFrame {
 		return is;
 	}
 
-	// ¹ºÂò¼±¾È°ü
+	// è´­ä¹°æ€¥æ•‘åŒ…
 	private class buyKit implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			if (run.data.money >= 100) {
@@ -240,14 +240,14 @@ public class Base extends JFrame {
 					if (Kits[index] == null) {
 						Kits[index] = new cureKit(50);
 						aidnum++;
-						disaid.setText("¼±¾È°ü(µ¥ÌåÖÎÁÆ50)£º" + aidnum + "/10");
+						disaid.setText("æ€¥æ•‘åŒ…(å•ä½“æ²»ç–—50)ï¼š" + aidnum + "/10");
 						run.data.money -= 100;
 						break;
 					}
 				}
 			}
 			else{
-				JOptionPane.showMessageDialog(null, "½ğÇ®²»×ã£¬ÎŞ·¨¹ºÂò£¡", "ÎŞ·¨¹ºÂò", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "é‡‘é’±ä¸è¶³ï¼Œæ— æ³•è´­ä¹°ï¼", "æ— æ³•è´­ä¹°", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
 	}

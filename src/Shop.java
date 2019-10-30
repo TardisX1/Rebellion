@@ -3,7 +3,7 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-//ÉÌµê½çÃæ
+//å•†åº—ç•Œé¢
 public class Shop extends JFrame {
 	JPanel test = new JPanel();
 	store st = new store();
@@ -23,12 +23,12 @@ public class Shop extends JFrame {
 	}
 }
 
-// ÉÌµêÃæ°å
+// å•†åº—é¢æ¿
 class store extends JTabbedPane {
 
 	JPanel buy = new JPanel();
-	JButton refresh = new JButton("Ë¢ĞÂµ±Ç°ÉÌÆ· ( 1500 G )");
-	JButton buybag = new JButton("¹ºÂò(Ìí¼Óµ½±³°ü)");
+	JButton refresh = new JButton("åˆ·æ–°å½“å‰å•†å“ ( 1500 G )");
+	JButton buybag = new JButton("è´­ä¹°(æ·»åŠ åˆ°èƒŒåŒ…)");
 
 	Equipment[] equip = { new Teeth().changeQuality(), new Claws().changeQuality(), new Helmet().changeQuality(),
 			new Breastplate().changeQuality(), new Kneecap().changeQuality() };
@@ -37,17 +37,17 @@ class store extends JTabbedPane {
 
 	public store() {
 		buy();
-		add("¹ºÂò", buy);
+		add("è´­ä¹°", buy);
 
 	}
 
-	// ¹ºÂò½çÃæ
+	// è´­ä¹°ç•Œé¢
 	public void buy() {
 		buy.setLayout(new GridLayout(7, 1));
 		for (int index = 0; index < des.length; index++)
 			buy.add(des[index]);
 
-		// ¹ºÂò°´Å¥
+		// è´­ä¹°æŒ‰é’®
 		buybag.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Equipment[] purchase = getEquip();
@@ -55,12 +55,12 @@ class store extends JTabbedPane {
 					des[index].setSelected(false);
 				int sumcost = 0;
 
-				// ×Ü¼Û
+				// æ€»ä»·
 				for (int count = 0; count < purchase.length; count++)
 					if (purchase[count] != null) {
 						sumcost += purchase[count].cost;
 					}
-				// Ìí¼Óµ½±³°ü
+				// æ·»åŠ åˆ°èƒŒåŒ…
 				if (run.data.money >= sumcost) {
 					for (int count = 0; count < purchase.length; count++) {
 						if (purchase[count] != null) {
@@ -69,12 +69,12 @@ class store extends JTabbedPane {
 						}
 					}
 				} else {
-					JOptionPane.showMessageDialog(null, "½ğÇ®²»×ã£¬ÎŞ·¨¹ºÂò£¡", "ÎŞ·¨¹ºÂò", JOptionPane.INFORMATION_MESSAGE);
+					JOptionPane.showMessageDialog(null, "é‡‘é’±ä¸è¶³ï¼Œæ— æ³•è´­ä¹°ï¼", "æ— æ³•è´­ä¹°", JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 		});
 
-		// Ë¢ĞÂÉÌµê»õÎï
+		// åˆ·æ–°å•†åº—è´§ç‰©
 		refresh.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -84,7 +84,7 @@ class store extends JTabbedPane {
 							des[index].setSelected(false);
 						run.data.money -= 1500;
 					} else
-						JOptionPane.showMessageDialog(null, "½ğÇ®²»×ã£¬ÎŞ·¨Ë¢ĞÂ£¡", "ÎŞ·¨Ë¢ĞÂ", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "é‡‘é’±ä¸è¶³ï¼Œæ— æ³•åˆ·æ–°ï¼", "æ— æ³•åˆ·æ–°", JOptionPane.INFORMATION_MESSAGE);
 				} catch (InstantiationException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -103,7 +103,7 @@ class store extends JTabbedPane {
 		buy.add(r);
 	}
 
-	// Ëæ»ú¸Ä±ä×°±¸Æ·ÖÊ
+	// éšæœºæ”¹å˜è£…å¤‡å“è´¨
 	public void rollE() throws InstantiationException, IllegalAccessException {
 		for (int index = 0; index < equip.length; index++) {
 			equip[index] = equip[index].getClass().newInstance().changeQuality();
@@ -111,7 +111,7 @@ class store extends JTabbedPane {
 		}
 	}
 
-	// µÃµ½¸´Ñ¡¿òÑ¡ÖĞµÄ×°±¸
+	// å¾—åˆ°å¤é€‰æ¡†é€‰ä¸­çš„è£…å¤‡
 	public Equipment[] getEquip() {
 		Equipment[] purchased = new Equipment[5];
 		for (int index = 0; index < equip.length; index++) {
@@ -122,7 +122,7 @@ class store extends JTabbedPane {
 	}
 }
 
-// ½ÇÉ«Ãæ°å
+// è§’è‰²é¢æ¿
 class character extends JTabbedPane {
 	final int num = run.base.members.length;
 	JPanel[] ani = new JPanel[num];
@@ -145,16 +145,16 @@ class character extends JTabbedPane {
 		desc.start();
 	}
 
-	// ´´½¨ĞÂ½ÇÉ«±êÇ©
+	// åˆ›å»ºæ–°è§’è‰²æ ‡ç­¾
 	public void createTab(int index, Animals animal) {
-		buyFor[index] = new JButton("ÎªËü¹ºÂò");
+		buyFor[index] = new JButton("ä¸ºå®ƒè´­ä¹°");
 		buyFor[index].addActionListener(new buyListener());
 		buy[index] = new JPanel();
 		buy[index].add(buyFor[index]);
 
 		des[index] = new createDes(animal);
 
-		fixFor[index] = new JButton("ĞŞÀí×°±¸");
+		fixFor[index] = new JButton("ä¿®ç†è£…å¤‡");
 		fixFor[index].addActionListener(new fixListener());
 		fix[index] = new JPanel();
 		fix[index].add(fixFor[index]);
@@ -168,7 +168,7 @@ class character extends JTabbedPane {
 		add(animal.name, ani[index]);
 	}
 
-	// ÊµÊ±¸üĞÂ
+	// å®æ—¶æ›´æ–°
 	private class Description implements Runnable {
 		public void run() {
 			while (true) {
@@ -190,45 +190,45 @@ class character extends JTabbedPane {
 		}
 	}
 
-	// ¹ºÂò°´Å¥
+	// è´­ä¹°æŒ‰é’®
 	private class buyListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			Equipment[] purchase = st.getEquip();
 			for (int index = 0; index < st.des.length; index++)
 				st.des[index].setSelected(false);
 			int aninum = 0, sumcost = 0;
-			// ÎªË­¹ºÂò
+			// ä¸ºè°è´­ä¹°
 			for (int index = 0; index < run.base.members.length; index++) {
 				if (e.getSource() == buyFor[index]) {
 					aninum = index;
 				}
 			}
-			// ×Ü¼Û
+			// æ€»ä»·
 			for (int count = 0; count < purchase.length; count++)
 				if (purchase[count] != null) {
 					sumcost += purchase[count].cost;
 				}
-			// °¤¸öÌí¼Ó
+			// æŒ¨ä¸ªæ·»åŠ 
 			if (run.data.money >= sumcost) {
 				for (int count = 0; count < purchase.length; count++) {
 					if (purchase[count] != null) {
 						run.data.money -= purchase[count].cost;
-						// »»ÉÏ¹ºÂòµÄ×°±¸£¬½«»»ÏÂµÄ·ÅÈë±³°ü
+						// æ¢ä¸Šè´­ä¹°çš„è£…å¤‡ï¼Œå°†æ¢ä¸‹çš„æ”¾å…¥èƒŒåŒ…
 						run.bag.bag.equipAdd(run.base.members[aninum].changeEquip(purchase[count]));
 					}
 				}
 			} else {
-				JOptionPane.showMessageDialog(null, "½ğÇ®²»×ã£¬ÎŞ·¨¹ºÂò£¡", "ÎŞ·¨¹ºÂò", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "é‡‘é’±ä¸è¶³ï¼Œæ— æ³•è´­ä¹°ï¼", "æ— æ³•è´­ä¹°", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
 	}
 
-	// ĞŞÀí°´Å¥
+	// ä¿®ç†æŒ‰é’®
 	private class fixListener implements ActionListener {
 		public void actionPerformed(ActionEvent e) {
 			int aninum = 0, sumcost = 0;
 
-			// ÎªË­ĞŞÀí
+			// ä¸ºè°ä¿®ç†
 			for (int index = 0; index < run.base.members.length; index++) {
 				if (e.getSource() == fixFor[index]) {
 					aninum = index;
@@ -236,7 +236,7 @@ class character extends JTabbedPane {
 			}
 
 			Equipment[] equip = run.base.members[aninum].equips;
-			// ĞŞÀí
+			// ä¿®ç†
 			for (int index = 0; index < equip.length; index++) {
 				if (equip[index] != null) {
 					equip[index].endurance++;
