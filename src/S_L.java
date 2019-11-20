@@ -8,7 +8,7 @@ public class S_L {
 	public static void Save() {
 		try {
 			//该文件夹需要提前创建 正在解决相对路径问题
-			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("Saves/save"));
+			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("save"));
 
 			out.writeInt(run.data.money);
 			out.writeObject(run.data.wargroup);
@@ -32,7 +32,7 @@ public class S_L {
 
 	public static void Load() {
 		try {
-			ObjectInputStream in = new ObjectInputStream(new FileInputStream("Saves/save"));
+			ObjectInputStream in = new ObjectInputStream(new FileInputStream("save"));
 			try {
 
 				run.data.money = (int)in.readInt();
