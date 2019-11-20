@@ -7,6 +7,7 @@ public class S_L {
 
 	public static void Save() {
 		try {
+			//该文件夹需要提前创建 正在解决相对路径问题
 			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("Saves/save"));
 
 			out.writeInt(run.data.money);
