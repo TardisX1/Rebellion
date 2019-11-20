@@ -9,7 +9,7 @@ import javax.swing.*;
 //数据界面
 public class Data extends JFrame {
 	Animals[] wargroup = { new Tiger(), new Lion(), new Bear() };
-	int money = 200;
+	int money = 20000000;
 	JTextArea[] Gold = new JTextArea[4];
 	JPanel center = new JPanel();
 	createDes[] data = new createDes[3];
@@ -98,6 +98,8 @@ class createDes extends JPanel {
 				for (int index = 0; index < animal.equips.length; index++) {
 					if (!(animal.equips[index] instanceof Blank)) {
 						run.bag.bag.equipAdd(animal.equips[index]);
+						animal.attack -= animal.equips[index].ATK;
+						animal.defence -= animal.equips[index].DEF;
 						animal.equips[index] = new Blank();
 					}
 				}

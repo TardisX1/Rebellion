@@ -27,7 +27,7 @@ public class Shop extends JFrame {
 class store extends JTabbedPane {
 
 	JPanel buy = new JPanel();
-	JButton refresh = new JButton("刷新当前商品 ( 1500 G )");
+	JButton refresh = new JButton("刷新当前商品 ( 150 G )");
 	JButton buybag = new JButton("购买(添加到背包)");
 
 	Equipment[] equip = { new Teeth().changeQuality(), new Claws().changeQuality(), new Helmet().changeQuality(),
@@ -78,11 +78,11 @@ class store extends JTabbedPane {
 		refresh.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					if (run.data.money >= 1500) {
+					if (run.data.money >= 150) {
 						rollE();
 						for (int index = 0; index < des.length; index++)
 							des[index].setSelected(false);
-						run.data.money -= 1500;
+						run.data.money -= 150;
 					} else
 						JOptionPane.showMessageDialog(null, "金钱不足，无法刷新！", "无法刷新", JOptionPane.INFORMATION_MESSAGE);
 				} catch (InstantiationException e1) {
