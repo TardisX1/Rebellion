@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Rebellion:jar">
+    <output-path>$PROJECT_DIR$/Rebellion_jar</output-path>
+    <root id="archive" name="Rebellion.jar">
+      <element id="module-output" name="Rebellion" />
+    </root>
+  </artifact>
+</component>
