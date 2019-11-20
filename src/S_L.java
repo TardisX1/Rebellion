@@ -6,7 +6,7 @@ import javax.swing.*;
 public class S_L {
 
 	public static void Save() {
-		try {
+		try {测试
 			//该文件夹需要提前创建 正在解决相对路径问题
 			ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("Saves/save"));
 
